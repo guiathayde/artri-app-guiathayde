@@ -43,7 +43,11 @@ class _RemedyPageState extends State<RemedyPage> {
                       ),
                     ),
                     IconButton(
-                      icon: const Icon(Icons.add_circle, color: AppColors.darkGreen, size: 30),
+                      icon: const Icon(
+                        Icons.add_circle,
+                        color: AppColors.darkGreen,
+                        size: 30,
+                      ),
                       onPressed: () {
                         // Navegar para tela de cadastro de remédio
                       },
@@ -56,11 +60,18 @@ class _RemedyPageState extends State<RemedyPage> {
                 child: Text('Checklist diário de tratamento'),
               ),
               const SizedBox(height: 20),
-              
               if (model.isLoading)
-                const Expanded(child: Center(child: CircularProgressIndicator()))
+                const Expanded(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                )
               else if (model.remedies.isEmpty)
-                const Expanded(child: Center(child: Text('Nenhum medicamento cadastrado.')))
+                const Expanded(
+                  child: Center(
+                    child: Text('Nenhum medicamento cadastrado.'),
+                  ),
+                )
               else
                 Expanded(
                   child: ListView.builder(
@@ -78,23 +89,30 @@ class _RemedyPageState extends State<RemedyPage> {
                           side: BorderSide(color: Colors.grey.shade200),
                         ),
                         child: ListTile(
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 8,
+                          ),
                           leading: Container(
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: isTaken ? AppColors.darkGreen : AppColors.darkGreenSurface,
+                              color: isTaken
+                                  ? AppColors.darkGreen
+                                  : AppColors.darkGreenSurface,
                               shape: BoxShape.circle,
                             ),
                             child: Icon(
                               Icons.medication_liquid_sharp,
-                              color: isTaken ? Colors.white : AppColors.darkGreen,
+                              color:
+                                  isTaken ? Colors.white : AppColors.darkGreen,
                             ),
                           ),
                           title: Text(
-                            remedy.name ?? '',
+                            remedy.name,
                             style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.bold,
-                              decoration: isTaken ? TextDecoration.lineThrough : null,
+                              decoration:
+                                  isTaken ? TextDecoration.lineThrough : null,
                             ),
                           ),
                           subtitle: const Text('Sem detalhes de dose/horário'),

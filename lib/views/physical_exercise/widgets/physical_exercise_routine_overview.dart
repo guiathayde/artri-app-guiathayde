@@ -46,14 +46,6 @@ class _PhysicalExerciseRoutineOverviewState
           mainAxisSize: MainAxisSize.min,
           spacing: 16,
           children: [
-            Text(
-              'Você levará aproximadamente x minutos para realizar os exercícios',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                fontSize: 22,
-                color: AppColors.darkGreen,
-              ),
-            ),
             Flexible(
               fit: FlexFit.tight,
               child: Scrollbar(
