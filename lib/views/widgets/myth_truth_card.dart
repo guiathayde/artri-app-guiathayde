@@ -5,11 +5,11 @@ import 'package:artriapp/utils/enums/index.dart';
 import 'package:artriapp/models/index.dart';
 import 'package:go_router/go_router.dart';
 
-class QuestionCard extends StatelessWidget {
+class MythTruthCard extends StatelessWidget {
   final Myth myth;
   final IconData leadingIcon;
 
-  const QuestionCard({
+  const MythTruthCard({
     super.key,
     required this.myth,
     this.leadingIcon = Icons.help_outline, // Default leading icon
